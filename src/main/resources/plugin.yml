@@ -1,0 +1,12 @@
+name: GuildWhitelist
+author: i@sabel.dev
+website: https://i.sabel.dev
+version: ${project.version}
+main: dev.sabel.i.GuildWhitelist.GuildWhitelist
+api-version: 1.13
+load: STARTUP
+commands:
+  guildwhitelist:
+    aliases: gwl
+    usage: "/<command>"
+    description: "GuildWhitelist Base Command"
