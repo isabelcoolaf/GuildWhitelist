@@ -1,3 +1,7 @@
 HypixelApiKey:
 GuildID:
 DeniedMsg: "&e&lNon-Guild Members are not allowed. Sorry!"
+
+# If the plugin fails to get a user's guild (if the Hypixel API is down, or for other reasons), allow users to join the server?
+# This could potentially let users not in your guild join!
+AllowLoginOnGuildFetchFail: false

@@ -15,6 +15,7 @@ public final class GuildWhitelist extends JavaPlugin {
     public String gid;
     public String kickmsg;
     public CustomAllowedHandler wlhandler;
+    public boolean allowJoinOnFail;
     public boolean configured = false;
 
     @Override
@@ -34,6 +35,7 @@ public final class GuildWhitelist extends JavaPlugin {
         String apikey = config.getString("HypixelApiKey");
         String guildid = config.getString("GuildID");
         kickmsg = config.getString("DeniedMsg");
+        allowJoinOnFail = config.getBoolean("AllowLoginOnGuildFetchFail");
         if (apikey == null || guildid == null || kickmsg == null) {
             getLogger().warning("Plugin not configured yet...");
             return;

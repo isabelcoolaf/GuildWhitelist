@@ -37,9 +37,11 @@ public final class PlayerJoin implements Listener {
         try {
             guild = plugin.api.getGuildByPlayer(puuid).get().getGuild();
         } catch (InterruptedException | ExecutionException err) {
-            err.printStackTrace();
-            plugin.getLogger().info("Could not get guild for player " + pname +"!  Disallowing login as precaution.");
-            e.disallow(AsyncPlayerPreLoginEvent.Result.KICK_OTHER, ChatColor.RED + "GuildWhitelist plugin error. Please message a server administrator.");
+            plugin.getLogger().warning("Hypixel API is down. Following your config rules.");
+            if (!plugin.allowJoinOnFail) {
+                e.disallow(AsyncPlayerPreLoginEvent.Result.KICK_OTHER, ChatColor.RED + "Could not fetch your guild from the Hypixel API.\n\nTell your server administrators to change the failsafe config option for access or wait for the API to return.");
+                return;
+            }
             return;
         }
 

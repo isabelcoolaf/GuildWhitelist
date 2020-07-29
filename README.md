@@ -17,6 +17,10 @@ All above commands require OP or `guildwhitelist.manage`.
 HypixelApiKey: Run /api new on Hypixel and put the key here.
 GuildID: Go to https://api.hypixel.net/guild?name=GUILD-NAME-HERE&key=API-KEY-HERE and paste the "_id" from the response here.
 DeniedMsg: "You can put a custom kick message here. Color codes using & work."
+
+# If the plugin fails to get a user's guild (if the Hypixel API is down, or for other reasons), allow users to join the server?
+# This could potentially let users not in your guild join!
+AllowLoginOnGuildFetchFail: false
 ```
 
 ### Resources Used
